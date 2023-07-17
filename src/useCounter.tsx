@@ -21,9 +21,9 @@ type objType = {
     const [count, setCount] = useState(initialValue || 0);
     const [addVal, setAddVal] = useState(1);
     const [obj, setObj] = useState<objType>({
-      objNum: 0,
+      objNum: 1,
       objNumArr: [11, 22],
-      objStrArr: ["Five", "Six"]
+      objStrArr: ["One", "Two"]
     });
     const increment = () => {
       setCount(count + addVal);

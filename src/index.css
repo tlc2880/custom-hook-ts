@@ -2,10 +2,17 @@
   font-family: sans-serif;
   text-align: center;
 }
-.textbox {
-  font-size: 32px;
+.numberbox {
+  font-size: 16px;
   padding: 2px;
   width: 64px;
   text-align: center;
+  margin-right: 8px;
+}
+.textbox {
+  font-size: 16px;
+  padding: 2px;
+  width: 200px;
+  text-align: left;
   margin-right: 8px;
 }
