@@ -18,7 +18,7 @@ const App = () => {
     setAddVal,
     obj,
     setObj
-  } = useCounter(0);
+  } = useCounter(1);
 
   const [multVal, setMultVal] = useState(1);
   const [numArr, setNumArr] = useState<number[]>([1, 2]);
@@ -36,11 +36,11 @@ const App = () => {
     numArrTemp.forEach((item, index, arr) => {
       arr[index] = item * multVal;
     });
-    obj.objNumArr = numArrTemp;
+    setObj({...obj, objNumArr: numArrTemp}); // This is correct way to update state object
   };
   const pushString = () => {
     setStrArr([...strArr, inStr]);
-    obj.objStrArr = [...obj.objStrArr, inStr];
+    setObj({...obj,  objStrArr: [...obj.objStrArr, inStr]}); // This is the correct way to update state object
     setInStr("");
   };
   return (
@@ -54,13 +54,13 @@ const App = () => {
       <button onClick={reset}>Reset</button>
       <input
         type="number"
-        className={"textbox"}
+        className={"numberbox"}
         value={addVal}
         onChange={(e) => setAddVal(parseInt(e.target.value, 10))}
       />
       <input
         type="number"
-        className={"textbox"}
+        className={"numberbox"}
         value={multVal}
         onChange={(e) => setMultVal(parseInt(e.target.value, 10))}
       />
